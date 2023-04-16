@@ -1,23 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
+    <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
+        @foreach ($images as $image)
+            <div class="card" style="width: 18rem;">
+                <img src="{{ $image->img }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                    <h5 class="card-title">{{ $image->title }}</h5>
+                    <h5 class="card-title">{{ $image->year }}</h5>
+                    <p class="card-text">{{ $image->description }}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-        </div>
     </div>
-</div>
+    @endforeach
 @endsection
