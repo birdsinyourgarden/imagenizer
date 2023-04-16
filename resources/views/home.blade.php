@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <div>
+        <button class="btn btn-primary">
+            <a href="{{ route('createImage') }}">
+                <div class="text-warning">ADD NEW IMAGE</div>
+            </a>
+        </button>
+    </div>
     <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
         @foreach ($images as $image)
             <div class="card" style="width: 18rem;">

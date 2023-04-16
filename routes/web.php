@@ -17,5 +17,9 @@ use App\Http\Controllers\ImageController;
 
 Auth::routes();
 
-Route::get('/', [ImageController::class, 'index']);
+Route::get('/', [ImageController::class, 'index'])->name('home');
 Route::get('/home', [ImageController::class, 'index']);
+
+Route::get('/create', [ImageController::class, 'create'])->name('createImage');
+Route::post('/', [ImageController::class, 'store'])->name('storeImage');
+

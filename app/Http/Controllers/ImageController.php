@@ -21,7 +21,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        return view ('createImage');
     }
 
     /**
@@ -29,7 +29,9 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image = request()->except('_token');
+        Image::create($image);
+        return redirect()->route('home');
     }
 
     /**
