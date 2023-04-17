@@ -47,7 +47,8 @@ class ImageController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $image = Image::find($id);
+        return view ('editImage', compact('image'));
     }
 
     /**
@@ -55,7 +56,9 @@ class ImageController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $image = request()->except('_token', '_method');
+        Image::where('id', '=', $id)->update($image);
+        return redirect()->route('home');
     }
 
     /**

@@ -20,10 +20,14 @@
                     <form action="{{ route('deleteImage', ['id' => $image->id]) }}" method="post">
                         @method('delete')
                         @csrf
+                        <div class="d-flex justify-content-end">
+                        <a class="btn text-end mt-2"
+                        href="{{ route('editImage', ['id' => $image->id]) }}"><img src="/images/edit.png" alt="edit button"></a>
                         <button type="submit"
                             class="btn-adm m-1 d-flex justify-content-center align-items-center"
                             onclick="return confirm('Are you sure you want to delete this image? {{ $image->name }} - ID {{ $image->id }} ')"><img src="/images/delete.png" alt="delete button">
                         </button>
+                        </div>
                     </form>
                 </div>
             </div>

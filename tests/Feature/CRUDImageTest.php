@@ -39,4 +39,12 @@ class CRUDImageTest extends TestCase
         ]);
         $this->assertCount(1, Image::all());
     }
+
+    public function test_anImageCanBeUpdated(){
+        $this->withExceptionHandling();
+        $image = Image::factory()->create();
+        $this->assertCount(1, Image::all());
+        $response = $this->patch(route('updateImage', $image->id), ['title' => 'New Title']);
+        $this->assertEquals('New Title', Image::first()->title);
+    }
 }

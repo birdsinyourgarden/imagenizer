@@ -25,3 +25,5 @@ Route::post('/', [ImageController::class, 'store'])->name('storeImage');
 
 Route::delete('/delete/{id}', [ImageController::class, 'destroy'])->name('deleteImage');
 
+Route::get('/edit/{id}', [ImageController::class, 'edit'])->name('editImage');
+Route::patch('/image/{id}', [ImageController::class, 'update'])->name('updateImage');
