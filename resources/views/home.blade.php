@@ -17,8 +17,16 @@
                     <h5 class="card-title">{{ $image->year }}</h5>
                     <p class="card-text">{{ $image->description }}</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <form action="{{ route('deleteImage', ['id' => $image->id]) }}" method="post">
+                        @method('delete')
+                        @csrf
+                        <button type="submit"
+                            class="btn-adm m-1 d-flex justify-content-center align-items-center"
+                            onclick="return confirm('Are you sure you want to delete this image? {{ $image->name }} - ID {{ $image->id }} ')"><img src="/images/delete.png" alt="delete button">
+                        </button>
+                    </form>
                 </div>
             </div>
+        @endforeach
     </div>
-    @endforeach
 @endsection

@@ -63,6 +63,7 @@ class ImageController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Image::destroy($id);
+        return redirect()->route('home');
     }
 }

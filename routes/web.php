@@ -23,3 +23,5 @@ Route::get('/home', [ImageController::class, 'index']);
 Route::get('/create', [ImageController::class, 'create'])->name('createImage');
 Route::post('/', [ImageController::class, 'store'])->name('storeImage');
 
+Route::delete('/delete/{id}', [ImageController::class, 'destroy'])->name('deleteImage');
+
