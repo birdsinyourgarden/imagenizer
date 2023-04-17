@@ -47,4 +47,13 @@ class CRUDImageTest extends TestCase
         $response = $this->patch(route('updateImage', $image->id), ['title' => 'New Title']);
         $this->assertEquals('New Title', Image::first()->title);
     }
+
+    public function test_anImageCanBeShowed(){
+        $this->withExceptionHandling();
+        $image = Image::factory()->create();
+        $this->assertCount(1, Image::all());
+        $response = $this->get(route('showImage', $image->id));
+        $response->assertSee($image->name);
+        $response->assertStatus(200)->assertViewIs('showImage');
+    }
 }

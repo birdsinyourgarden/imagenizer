@@ -11,6 +11,7 @@
     <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
         @foreach ($images as $image)
             <div class="card" style="width: 18rem;">
+                <a href="{{ route('showImage', ['id' => $image->id]) }}">
                 <img src="{{ $image->img }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $image->title }}</h5>

@@ -27,3 +27,5 @@ Route::delete('/delete/{id}', [ImageController::class, 'destroy'])->name('delete
 
 Route::get('/edit/{id}', [ImageController::class, 'edit'])->name('editImage');
 Route::patch('/image/{id}', [ImageController::class, 'update'])->name('updateImage');
+
+Route::get('/show/{id}', [ImageController::class, 'show'])->name('showImage');
