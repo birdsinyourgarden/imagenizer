@@ -1,0 +1,16 @@
+/* Header */
+
+.mainHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: rgb(231, 223, 223);
+  padding: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+}
+
+.siteIdentity img {
+  width: 700px;
+}
