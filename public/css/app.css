@@ -1,7 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #e0ebfa;
-  margin: 0;
 }
 
 /* Header */
@@ -19,6 +18,23 @@ body {
 
 .siteIdentity img {
   width: 700px;
+}
+
+/* Main */
+
+a:not([class]) {
+  text-decoration: none;
+  color: #3c2634;
+}
+
+.card {
+  background-color: #b4e0ca;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Footer */
