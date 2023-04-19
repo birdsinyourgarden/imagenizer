@@ -31,10 +31,14 @@ a:not([class]) {
   background-color: #b4e0ca;
 }
 
-.btn-primary {
+.btn-secondary {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.input-group-text {
+  width: 115px;
 }
 
 /* Footer */

@@ -2,9 +2,9 @@
 @section('content')
     <div class="container mt-3">
     <div class="d-flex justify-content-center">
-        <button class="btn btn-primary">
+        <button class="btn btn-secondary">
             <a href="{{ route('createImage') }}">
-                <div class="text-warning">ADD NEW IMAGE</div>
+                <div class="text-white">ADD NEW IMAGE</div>
             </a>
         </button>
     </div>
@@ -32,8 +32,5 @@
                 </div>
             </div>
         @endforeach
-        <div class="container justify-content-center" style="max-width: 65rem">
-        <a class="btn mt-5 mb-1" href="{{ route('home') }}"><img src="/img/return.png" alt="button back to home view"></a>
-        </div>
     </div>
 @endsection

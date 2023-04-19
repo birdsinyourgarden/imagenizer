@@ -15,25 +15,25 @@ class DatabaseSeeder extends Seeder
     {
         Image::factory()->create([
             'title' => 'Cusco',
-            'description' => 'The photograph shows a view of the ancient Incan ruins of Machu Picchu, located in the mountainous region of Peru. Despite the fog, the distinct stone structures of Machu Picchu are still visible. The iconic stone structures, including the terraced fields, walls and temples.',
+            'description' => 'The photograph shows a view of the ancient Incan ruins of Machu Picchu, located in the mountainous region of Peru. It is Recognized as one of the New Seven Wonders of the World. Despite the fog, the distinct stone structures, terraced fields and temples are still visible.',
             'img' => 'https://res.cloudinary.com/dav8u32ps/image/upload/v1681670308/peru.jpg',
             'year' => 2016,
         ]);        
         Image::factory()->create([
             'title' => 'Lisbon',
-            'description' => 'The house is a charming, old building with a beautiful red door located in the heart of Lisbon. The plants spill over onto the sidewalk, creating a lush and inviting environment. It is a lovely example of traditional Lisbon architecture.',
+            'description' => 'Lisbon is known for its steep hills, narrow streets, and historic neighborhoods. The house is a charming, old building with a beautiful red door. The plants spill over onto the sidewalk, creating a lush and inviting environment. It\'s a beautiful Portuguese postcard.',
             'img' => 'https://res.cloudinary.com/dav8u32ps/image/upload/v1681670309/lisbon.jpg',
             'year' => 2022,
         ]);
         Image::factory()->create([
-            'title' => 'Iceland',
-            'description' => 'A geysir in Iceland is a mesmerizing natural phenomenon that captures the essence of Iceland\'s volcanic landscapes. The image captures the unique beauty and geothermal activity that Iceland is renowned for, providing a glimpse into the country\'s captivating and otherworldly natural wonders.',
+            'title' => 'Geysir',
+            'description' => 'Geysir is a famous geothermal area located in Iceland. A geysir is a mesmerizing natural event that captures the essence of Iceland\'s volcanic landscapes. The image captures the unique beauty and geothermal activity that Iceland is renowned for.',
             'img' => 'https://res.cloudinary.com/dav8u32ps/image/upload/v1681670309/iceland.jpg',
             'year' => 2013,
         ]);
         Image::factory()->create([
             'title' => 'Prague',
-            'description' => 'The John Lennon Wall in Prague is a vibrant and colorful graffiti-covered wall that serves as a unique and powerful tribute to the legendary musician and peace activist, John Lennon. Located in the Mala Strana district of Prague, the wall is adorned with messages of love, peace, and freedom.',
+            'description' => 'The John Lennon Wall in Prague is a vibrant and colorful graffiti-covered wall that serves as a unique and powerful tribute to the legendary musician and peace activist, John Lennon. The wall is adorned with messages of love, peace, and freedom.',
             'img' => 'https://res.cloudinary.com/dav8u32ps/image/upload/v1681670310/prague.jpg',
             'year' => 2019,
         ]);
