@@ -10,11 +10,9 @@
     </div>
     @else
     <div class="d-flex justify-content-center">
-        <button class="btn btn-secondary">
-            <a href="{{ route('createImage') }}">
-                <div class="text-white">ADD NEW IMAGE</div>
-            </a>
-        </button>
+        <a class="btn btn-secondary text-uppercase" href="{{ route('createImage') }}" role="button">
+            Add new image
+        </a>
     </div>
     <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
         @foreach ($images as $image)
