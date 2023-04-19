@@ -13,6 +13,10 @@ class Image extends Model
         'title',
         'description',
         'img',
-        'year',   
-    ];          
+        'year',
+    ];
+    
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
