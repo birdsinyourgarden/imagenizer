@@ -71,10 +71,24 @@ class CRUDImageTest extends TestCase
                 'title' => 'title',
                 'description' => 'description',
                 'img' => 'img',
-                'year' => 'year',
+                'year' => 2023,
             ]
         );
         $this->assertCount(1, Image::all());
+    }
+
+    public function test_anImageCanBeCreatedWithValidation()
+    {
+        $this->withExceptionHandling();
+        $response = $this->post((route('storeImage')),
+            [
+                'title' => 'title',
+                'description' => 'description',
+                'img' => 'img',
+                'year' => 'invalid_year',
+            ]
+        );
+        $response->assertSessionHasErrors(['year']);
     }
 
     public function test_anImageCanBeUpdated()

@@ -29,6 +29,12 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|max:150',
+            'year' => 'nullable|integer|min:1900|max:' . date('Y'),
+            'description' => 'nullable|max:500',
+            'img' => 'required|max:255'
+        ]);
         $image = request()->except('_token');
         Image::create($image);
         return redirect()->route('home');
