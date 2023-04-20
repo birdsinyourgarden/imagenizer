@@ -17,6 +17,7 @@ class ImageFactory extends Factory
     public function definition(): array
     {
         return [
+            'id_user' => $this->faker->randomDigitNotNull(),
             'title' => $this->faker->company(),
             'description' => $this->faker->realText(),
             'img' => $this->faker->imageUrl(),

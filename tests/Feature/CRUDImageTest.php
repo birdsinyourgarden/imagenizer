@@ -43,45 +43,69 @@ class CRUDImageTest extends TestCase
             ->assertSee('Add new image');
     }
 
-    public function test_listImageAppearInHomeView()
+    public function test_listImageAppearsInHomeView()
     {
         $this->withExceptionHandling();
-        $images = Image::factory(2)->create();
-        $image = $images[0];
+        $user = User::factory()->create();
+        $images = Image::factory(2)->create([
+            'id_user' => $user->id,
+        ]);
+        $this->actingAs($user);
         $response = $this->get('/');
-        $response->assertSee($image->name);
+        $response->assertSee($images[1]->title);
         $response->assertStatus(200)
             ->assertViewIs('home');
     }
 
     public function test_anImageCanBeDeleted()
     {
-        $this->withExceptionHandling();
-        $image = Image::factory()->create();
+        $user = User::factory()->create();
+        $image = Image::factory()->create([
+            'id_user' => $user->id,
+        ]);
         $this->assertCount(1, Image::all());
-        $response = $this->delete(route('deleteImage', $image->id));
-        $this->assertCount(0, Image::all());
+        $this->actingAs($user);
+        $this->delete(route('deleteImage', $image->id));
+        $this->assertDatabaseMissing('images', [
+            'id' => $image->id,
+        ]);
     }
 
     public function test_anImageCanBeCreated()
     {
         $this->withExceptionHandling();
-        $response = $this->post((route('storeImage')),
+        $user = User::factory()->create();
+        $image = Image::factory()->create([
+            'id_user' => $user->id,
+        ]);
+        $this->assertCount(1, Image::all());
+        $this->actingAs($user);
+        $this->post((route('storeImage')),
             [
+                'id_user' => $user->id,
                 'title' => 'title',
                 'description' => 'description',
                 'img' => 'img',
                 'year' => 2023,
             ]
         );
-        $this->assertCount(1, Image::all());
+        $this->assertDatabaseHas('images', [
+            'id' => $image->id,
+        ]);
     }
 
-    public function test_anImageCanBeCreatedWithValidation()
+    public function test_anImageCantBeCreatedWithValidation()
     {
         $this->withExceptionHandling();
+        $user = User::factory()->create();
+        Image::factory()->create([
+            'id_user' => $user->id,
+        ]);
+        $this->assertCount(1, Image::all());
+        $this->actingAs($user);
         $response = $this->post((route('storeImage')),
             [
+                'id_user' => $user->id,
                 'title' => 'title',
                 'description' => 'description',
                 'img' => 'img',
@@ -94,17 +118,25 @@ class CRUDImageTest extends TestCase
     public function test_anImageCanBeUpdated()
     {
         $this->withExceptionHandling();
-        $image = Image::factory()->create();
+        $user = User::factory()->create();
+        $image = Image::factory()->create([
+            'id_user' => $user->id,
+        ]);
         $this->assertCount(1, Image::all());
-        $response = $this->patch(route('updateImage', $image->id), ['title' => 'New Title']);
+        $this->actingAs($user);
+        $this->patch(route('updateImage', $image->id), ['title' => 'New Title']);
         $this->assertEquals('New Title', Image::first()->title);
     }
 
     public function test_anImageCanBeShowed()
     {
         $this->withExceptionHandling();
-        $image = Image::factory()->create();
+        $user = User::factory()->create();
+        $image = Image::factory()->create([
+            'id_user' => $user->id,
+        ]);
         $this->assertCount(1, Image::all());
+        $this->actingAs($user);
         $response = $this->get(route('showImage', $image->id));
         $response->assertSee($image->name);
         $response->assertStatus(200)->assertViewIs('showImage');

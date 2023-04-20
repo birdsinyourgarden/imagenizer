@@ -16,6 +16,7 @@
     </div>
     <div class="d-flex flex-wrap row justify-content-center my-4 px-xxl-5">
         @foreach ($images as $image)
+        @if ($image->id_user == Auth::id())
         <div class="card mb-4 m-4" style="width: 20rem;">
             <a href="{{ route('showImage', ['id' => $image->id]) }}">
             <img src="{{ $image->img }}" class="card-img-top mt-3" alt="travel landscape">
@@ -34,6 +35,7 @@
                 </form>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
     @endguest
