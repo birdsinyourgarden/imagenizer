@@ -28,8 +28,6 @@ Web application to manage my favourite images ![emoticon](https://user-images.gi
 - PHP 8.1
 - Laravel Framework 10.0
 - MySQL
-- DrawSQL
-- Cloudinary
 - SweetAlert2
 
 # How to install the project 👩‍💻
@@ -78,9 +76,13 @@ To run the tests, execute the following command(s)
 ```bash
   php artisan test
 ```
-<img src="https://user-images.githubusercontent.com/108950985/233361004-c94d8b9b-53a9-492c-ae84-0fed404486cd.png" width="500">
+<img src="https://user-images.githubusercontent.com/108950985/233629681-838ffd85-4304-4525-b9a7-8c77b4c09b31.png" width="500">
 
 ```bash
   vendor/bin/phpunit
 ```
-<img src="https://user-images.githubusercontent.com/108950985/233362369-eb462076-5943-4a46-b0c5-420a452863d5.png" width="600">
+<img src="https://user-images.githubusercontent.com/108950985/233629740-b9770f13-8065-456b-a725-4767163f9a05.png" width="600">
+
+# Development process 🤓
+
+I've developed a web application using PHP Laravel while following the MVC (Model-View-Controller) pattern. I've used Cloudinary for image hosting, and implemented functionalities for adding, editing, and deleting images. Additionally, I have created views for displaying and managing images, and incorporated SweetAlert2 for displaying confirmation alerts. I have also implemented validations and followed Test-Driven Development (TDD) practices.
