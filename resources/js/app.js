@@ -1,4 +1,3 @@
-// import './bootstrap';
 window.Swal = Swal;
 
 function deleteImage(event) {

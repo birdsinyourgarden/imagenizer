@@ -19,7 +19,8 @@
         @if ($image->id_user == Auth::id())
         <div class="card mb-4 m-4" style="width: 20rem;">
             <a href="{{ route('showImage', ['id' => $image->id]) }}">
-            <img src="{{ $image->img }}" class="card-img-top mt-3" alt="travel landscape">
+                <img src="{{ $image->img }}" class="card-img-top mt-3" alt="travel landscape">
+            </a>
             <div class="card-body">
                 <h4 class="card-title">{{ $image->title }}</h4>
                 <h5 class="card-title">{{ $image->year }}</h5>
