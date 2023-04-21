@@ -14,9 +14,9 @@ Web application to manage my favourite images ![emoticon](https://user-images.gi
 # Screenshoots 📸
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/108950985/233600991-c28098fd-c8ff-44a0-b8b5-5eea4a80d285.png" width="350px">
+<img src="https://user-images.githubusercontent.com/108950985/233600991-c28098fd-c8ff-44a0-b8b5-5eea4a80d285.png" width="370px">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://user-images.githubusercontent.com/108950985/233591780-3a87685b-af2f-47dc-9f4e-ca36d3377ed8.png" width="350px">
+<img src="https://user-images.githubusercontent.com/108950985/233591780-3a87685b-af2f-47dc-9f4e-ca36d3377ed8.png" width="370px">
 </p>
 
 # Stacks ⚙️
