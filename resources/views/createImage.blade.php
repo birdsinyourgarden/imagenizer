@@ -21,7 +21,8 @@
 							<textarea name="description" rows="3" class="form-control" placeholder="description" aria-label="description" aria-labelledby="label-description" maxlength="500"></textarea>
 						</div>
 						<div class="input-group mb-3">
-							<input type="file" name="img" class="form-control" placeholder="URL photo" aria-label="url-photo" aria-labelledby="label-url-photo" maxlength="255" required>
+							<span class="input-group-text" id="label-photo">Photo</span>
+							<input type="text" name="img" class="form-control" placeholder="URL photo" aria-label="url-photo" aria-labelledby="label-url-photo" maxlength="255" required>
 						</div>
 						<div class="btnCreate text-end">
 							<button type="submit" class="btn" value="create"><img src="/img/save.png" alt="save button"></button>
