@@ -20,10 +20,13 @@ Web application to manage my favourite images ![emoticon](https://user-images.gi
 - HTML 5
 - CSS 3
 - BootStrap 5
+- JavaScript
 - PHP 8.1
 - Laravel Framework 10.0
 - MySQL
+- DrawSQL
 - Cloudinary
+- SweetAlert2
 
 # How to install the project 👩‍💻
 
