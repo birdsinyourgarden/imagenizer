@@ -3,10 +3,11 @@
 <div class="container mt-3">
     @guest
     <div class="d-flex justify-content-center">
-        <div class="d-flex">
-            <a class="btn btn-secondary mx-4" href="{{ route('login') }}" role="button">{{ __('Login') }}</a>
-            <a class="btn btn-primary" href="{{ route('register') }}" role="button">{{ __('Register') }}</a>
-        </div>
+        <a class="btn btn-secondary mx-4" href="{{ route('login') }}" role="button">{{ __('Login') }}</a>
+        <a class="btn btn-primary mx-4" href="{{ route('register') }}" role="button">{{ __('Register') }}</a>
+    </div>
+    <div class= "mt-4 justify-content-center align-items-center d-flex">
+        <img class="img-fluid" src="https://res.cloudinary.com/dav8u32ps/image/upload/v1682039900/photos.png" alt="set of photos">
     </div>
     @else
     <div class="d-flex justify-content-center">
