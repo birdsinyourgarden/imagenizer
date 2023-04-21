@@ -13,14 +13,16 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap">
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- CSS only -->
+    <link rel="stylesheet" href="{{ Vite::asset('node_modules/sweetalert2/dist/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="/css/app.css">
+
+    <!-- Scripts -->
+    <script src="{{ Vite::asset('../node_modules/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+    <script src="{{ Vite::asset('resources/js/app.js') }}"></script>
 </head>
 <body>
     <div id="app">

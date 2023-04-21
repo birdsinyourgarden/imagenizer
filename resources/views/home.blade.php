@@ -24,12 +24,21 @@
                 <h4 class="card-title">{{ $image->title }}</h4>
                 <h5 class="card-title">{{ $image->year }}</h5>
                 <p class="card-text">{{ $image->description }}</p>
-                <form action="{{ route('deleteImage', ['id' => $image->id]) }}" method="post">
-                    @method('delete')
+                <form
+                    id="deleteImageForm{{ $image->id }}"
+                    onsubmit="deleteImage(event)"
+                    method="POST"
+                    action="{{ route('deleteImage', ['id' => $image->id]) }}"
+                    data-id="{{ $image->id }}"
+                >
+                    @method('DELETE')
                     @csrf
                     <div class="d-flex justify-content-end">
-                        <a class="btn text-end mt-2" href="{{ route('editImage', ['id' => $image->id]) }}"><img src="/img/edit.png" alt="edit button"></a>
-                        <button type="submit" class="btn text-end mt-2" onclick="return confirm('Are you sure you want to delete this image? {{ $image->name }} - ID {{ $image->id }} ')"><img src="/img/delete.png" alt="delete button">
+                        <a class="btn text-end mt-2" href="{{ route('editImage', ['id' => $image->id]) }}">
+                            <img src="/img/edit.png" alt="edit button">
+                        </a>
+                        <button type="submit" class="btn text-end mt-2">
+                            <img src="/img/delete.png" alt="delete button">
                         </button>
                     </div>
                 </form>
