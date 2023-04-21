@@ -8,21 +8,22 @@
 					<h2 class="cardTitle mb-4 d-flex flex-wrap row justify-content-center">Add New Image</h2>
 					<form class="justify-content-center" action="{{ route('storeImage') }}" method="post">
 						@csrf
+						<input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="label-title">Title</span>
-							<input type="text" name="title" class="form-control" placeholder="title" aria-label="title" aria-describedby="label-title" maxlength="150" required>
+							<input type="text" name="title" class="form-control" aria-label="title" aria-describedby="label-title" maxlength="150" required>
 						</div>
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="label-year">Year</span>
-							<input type="text" name="year" class="form-control" placeholder="year" aria-label="year" aria-labelledby="label-year" maxlength="4">
+							<input type="number" min="1900" max="{{ date('Y') }}" name="year" class="form-control" aria-label="year" aria-labelledby="label-year" maxlength="4">
 						</div>
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="label-description">Description</span>
-							<textarea name="description" rows="3" class="form-control" placeholder="description" aria-label="description" aria-labelledby="label-description" maxlength="500"></textarea>
+							<textarea name="description" rows="3" class="form-control" aria-label="description" aria-labelledby="label-description" maxlength="500"></textarea>
 						</div>
 						<div class="input-group mb-3">
-							<span class="input-group-text" id="label-photo">Photo</span>
-							<input type="text" name="img" class="form-control" placeholder="URL photo" aria-label="url-photo" aria-labelledby="label-url-photo" maxlength="255" required>
+							<span class="input-group-text" id="label-photo">Photo URL</span>
+							<input type="text" name="img" class="form-control" aria-label="URL photo" aria-labelledby="label-photo" maxlength="255" required>
 						</div>
 						<div class="btnCreate text-end">
 							<button type="submit" class="btn" value="create"><img src="/img/save.png" alt="save button"></button>

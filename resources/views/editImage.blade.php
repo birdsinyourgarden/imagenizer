@@ -15,7 +15,7 @@
 						</div>
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="label-year">Year</span>
-							<input type="text" name="year" class="form-control" aria-label="year" aria-describedby="label-year" value="{{$image->year}}" maxlength="4">
+							<input type="number" min="1900" max="{{ date('Y') }}" name="year" class="form-control" aria-label="year" aria-describedby="label-year" value="{{$image->year}}" maxlength="4">
 						</div>
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="label-description">Description</span>
@@ -23,7 +23,7 @@
 						</div>
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="label-photo">Photo</span>
-							<input type="text" name="img" class="form-control" aria-label="photo" aria-describedby="label-photo" value="{{$image->img}}">
+							<input type="text" name="img" class="form-control" aria-label="URL photo" aria-labelledby="label-photo" value="{{$image->img}}" maxlength="255" required>
 						</div>
 						<div class="btnCreate text-end">
 							<button type="submit" class="btn" value="create"><img src="/img/save.png" alt="save button"></button>

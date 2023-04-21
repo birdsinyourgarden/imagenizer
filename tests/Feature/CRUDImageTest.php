@@ -120,11 +120,14 @@ class CRUDImageTest extends TestCase
         $this->withExceptionHandling();
         $user = User::factory()->create();
         $image = Image::factory()->create([
-            'id_user' => $user->id,
+            'id_user' => $user->id
         ]);
         $this->assertCount(1, Image::all());
         $this->actingAs($user);
-        $this->patch(route('updateImage', $image->id), ['title' => 'New Title']);
+        $this->patch(route('updateImage', $image->id), [
+            'title' => 'New Title',
+            'img' => 'https://picsum.photos/200/300'
+        ]);
         $this->assertEquals('New Title', Image::first()->title);
     }
 

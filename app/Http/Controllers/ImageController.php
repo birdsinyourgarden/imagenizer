@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
 {
@@ -31,15 +30,13 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id_user' => 'required|integer',
             'title' => 'required|max:150',
             'year' => 'nullable|integer|min:1900|max:' . date('Y'),
             'description' => 'nullable|max:500',
             'img' => 'required|max:255'
         ]);
-        $user = Auth::user();
         $image = request()->except('_token');
-        $image['id_user'] = $user->id;
-        // $image->save();
         Image::create($image);
         return redirect()->route('home');
     }
@@ -67,6 +64,12 @@ class ImageController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'title' => 'required|max:150',
+            'year' => 'nullable|integer|min:1900|max:' . date('Y'),
+            'description' => 'nullable|max:500',
+            'img' => 'required|max:255'
+        ]);
         $image = request()->except('_token', '_method');
         Image::where('id', '=', $id)->update($image);
         return redirect()->route('home');
